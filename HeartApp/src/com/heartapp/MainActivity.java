@@ -16,6 +16,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -44,6 +45,9 @@ public class MainActivity extends Activity {
 	private String mDeviceName;
 	private String mDeviceAddress;
 	private Context mContext;
+	
+	private TextView tvPastDate, tvPastRate;
+	
 	private String uuid;
 	private boolean ifCon = false;
 	private static final int REQUEST_ENABLE_BT = 1;
@@ -166,7 +170,14 @@ public class MainActivity extends Activity {
 		String str = "create table if not exists heartrate(date text, rate text)";
 		db.execSQL(str);
 
-
+		tvPastDate = (TextView) findViewById(R.id.textview02);
+		tvPastRate = (TextView) findViewById(R.id.textview03);
+		
+		str = "select * from heartrate";
+		Cursor c = db.rawQuery(str, null);
+		c.moveToLast();
+		tvPastDate.setText(c.getString(0)+"   ");
+		tvPastRate.setText("½É¹Ú¼ö : " + c.getString(1));
 
 		mContext = this.getApplicationContext();
 		tvDanger = (TextView) findViewById(R.id.textview07);
