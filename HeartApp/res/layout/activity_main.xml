@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/textview01"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffff0000"
+        android:textSize="30pt"
+        android:textStyle="bold"
+        android:text="HeartApp" />
+    	<!-- 맨처음 앱 이름나오기 -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/originbutton"
+        android:textSize="18pt"
+        android:textStyle="bold"
+        android:text="기존 심박수"
+        android:layout_margin="30px"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textview01"
+        android:background="#ffff00" />
+    	<!-- 기존 심박수 나오는 버튼 -->
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/textview02"
+        android:textSize="13pt"
+        android:text="2014.05.21"
+        android:layout_below="@+id/originbutton" />
+   	    <!-- 기존 심박수 최근 날짜 나올 텍스트뷰 -->
+    <TextView 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/textview03"
+        android:textSize="13pt"
+        android:text="심박수 : 75"
+        android:layout_below="@+id/originbutton"
+        android:layout_toRightOf="@+id/textview02" />
+		<!-- 기존 심박수 최근 심박수 나올 텍스트뷰 -->
+	<TextView
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:id="@+id/textview04"
+	    android:textSize="8pt"
+	    android:textStyle="bold"
+	    android:text="평균 심박수 : 50~100회, 70/m이 정상"
+	    android:layout_margin="60px"
+	    android:layout_below="@+id/textview02"
+	    android:background="#fffff0" />
+		<!-- 사람 평균 심박수 설명 -->
+	<TextView
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:id="@+id/textview05"
+	    android:textSize="18pt"
+	    android:textStyle="bold"
+	    android:text="현재 나의 심박수"
+	    android:layout_margin="30px"
+	    android:layout_below="@+id/textview04"
+	    android:background="#ffff00" />
+		<!-- 블루투스로 받은 심박수 제목 -->
+	<TextView
+	    android:layout_height="wrap_content"
+	   	android:layout_width="wrap_content"
+	   	android:id="@+id/textview06"
+	   	android:textSize="15pt"
+	   	android:text="심박수"
+	   	android:layout_below="@+id/textview05" />
+		<!-- 블루투스로 받은 심박수 -->
+	<TextView
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:id="@+id/textview07"
+	    android:layout_centerHorizontal="true"
+	    android:textColor="#ffff0000"
+	    android:textSize="45pt"
+	    android:textStyle="bold"
+	    android:text="위험"
+	    android:layout_margin="30px"
+	    android:layout_below="@+id/textview06" />
+	    
+	    
+	    
+</RelativeLayout>
